@@ -2,33 +2,53 @@
 using System.IO;
 using System.Linq;
 using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
 
 namespace SetupPlayground
 {
-    [TestFixture(Platform.Android)]
-    [TestFixture(Platform.iOS)]
-    public class Tests
+    [TestFixture]
+    public class Class1
     {
-        IApp app;
-        Platform platform;
+        IWebDriver browser;
+        homePage homePage;
+        private IWebElement logoButton;
 
-        public Tests(Platform platform)
-        {
-            this.platform = platform;
-        }
+        [OneTimeSetUp]
+        public void openBrowser()
+        { browser = new ChromeDriver(); }
 
         [SetUp]
-        public void BeforeEachTest()
+        public void prepare()
         {
-            app = AppInitializer.StartApp(platform);
+            homePage = new homePage(browser);
+            homePage.open();
         }
 
         [Test]
-        public void AppLaunches()
+        public void RealestatePag()
         {
-            app.Screenshot("First screen.");
+            homePage.openRealestatePage();
+        }
+
+        [Test]
+        public void carsPage()
+        {
+            homePage.openCarsPage();
+        }
+
+        [TearDown]
+        public void returnToMainPage()
+        {
+            homePage.logoButton.Click();
+        }
+
+        [OneTimeTearDown]
+        public void closeBrowser()
+        {
+            browser.Close();
         }
     }
 }
