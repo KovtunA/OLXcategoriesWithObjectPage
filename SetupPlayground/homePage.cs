@@ -67,6 +67,20 @@ namespace SetupPlayground
         [FindsBy(How = How.CssSelector, Using = "#bottom7 > div > a > strong")]
         public IWebElement showbusiness;
 
+        [FindsBy(How = How.CssSelector, Using = "#searchmain-container > div > div > div:nth-child(11) > div:nth-child(2) > div > a > span:nth-child(1)")]
+        public IWebElement FashionCategory;
+
+        [FindsBy(How = How.CssSelector, Using = "#bottom891 > div > a > strong")]
+        public IWebElement showFashion;
+
+        [FindsBy(How = How.CssSelector, Using = "#searchmain-container > div > div > div:nth-child(11) > div:nth-child(3) > div > a > span:nth-child(1)")]
+        public IWebElement hobbyCategory;
+
+        [FindsBy(How = How.CssSelector, Using = "#bottom903 > div > a > strong")]
+        public IWebElement showHobby;
+
+        [FindsBy(How = How.CssSelector, Using = "#searchmain-container > div > div > div:nth-child(11) > div:nth-child(4) > div > a > span:nth-child(1)")]
+        public IWebElement showForfree;
 
         public homePage(IWebDriver browser)
         {
@@ -134,7 +148,6 @@ namespace SetupPlayground
             browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             showHouse.Click();
             browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-
         }
 
         public void openGadgetsPage()
@@ -144,6 +157,7 @@ namespace SetupPlayground
             showGadgets.Click();
             browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
+
         public void openBusinessPage()
         {
             gadgetsCategory.Click();
@@ -152,5 +166,27 @@ namespace SetupPlayground
             browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
+        public void openFashionPage()
+        {
+            FashionCategory.Click();
+            browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            showFashion.Click();
+            browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+        }
+
+        public void openHobbyPage()
+        {
+            hobbyCategory.Click();
+            browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            showHobby.Click();
+            browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+        }
+
+
+        public void openForfreePage()
+        {
+            showForfree.Click();
+            browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+        }
     }
 }

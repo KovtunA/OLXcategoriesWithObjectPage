@@ -65,30 +65,18 @@ namespace SetupPlayground
         public void BusinessPage()
         { homePage.openBusinessPage(); }
 
-        //[Test]
-        //public void moda()
-        //{
-        //    var nameOfCategoria = "#searchmain-container > div > div > div:nth-child(11) > div:nth-child(2) > div > a > span:nth-child(1)";
-        //    CategoriesOfMain(nameOfCategoria, "#bottom891 > div > a > strong");
-        //}
+        [Test]
+        public void FashionPage()
+        { homePage.openFashionPage(); }
 
-        //[Test]
-        //public void hobbi()
-        //{
-        //    var nameOfCategoria = "#searchmain-container > div > div > div:nth-child(11) > div:nth-child(3) > div > a > span:nth-child(1)";
-        //    CategoriesOfMain(nameOfCategoria, "#bottom903 > div > a > strong");
-        //}
+        [Test]
+        public void HobbyPage()
+        { homePage.openHobbyPage(); }
 
-        //[Test]
-        //public void darom()
-        //{
-        //    IWebDriver browser = new ChromeDriver();
-        //    browser.Navigate().GoToUrl("https://www.olx.ua");
-        //    IWebElement categoria = browser.FindElement(By.CssSelector("#searchmain-container > div > div > div:nth-child(11) > div:nth-child(4) > div > a > span:nth-child(1)"));
-        //    categoria.Click();
-        //    browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-        //    browser.Close();
-        //}
+        [Test]
+        public void ForFreepage()
+        { homePage.openForfreePage(); }
+
 
         //[Test]
         //public void obmen()
