@@ -82,6 +82,9 @@ namespace SetupPlayground
         [FindsBy(How = How.CssSelector, Using = "#searchmain-container > div > div > div:nth-child(11) > div:nth-child(4) > div > a > span:nth-child(1)")]
         public IWebElement showForfree;
 
+        [FindsBy(How = How.CssSelector, Using = "#searchmain-container > div > div > div:nth-child(16) > div.li.fleft > div > a > span:nth-child(1)")]
+        public IWebElement showExchange;
+
         public homePage(IWebDriver browser)
         {
             this.browser = browser;
@@ -182,10 +185,15 @@ namespace SetupPlayground
             browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
-
         public void openForfreePage()
         {
             showForfree.Click();
+            browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+        }
+
+        public void openExchangePage()
+        {
+            showExchange.Click();
             browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
     }

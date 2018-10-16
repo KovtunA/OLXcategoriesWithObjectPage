@@ -4,8 +4,7 @@ using System.Linq;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using Xamarin.UITest;
-using Xamarin.UITest.Queries;
+
 
 namespace SetupPlayground
 {
@@ -77,17 +76,9 @@ namespace SetupPlayground
         public void ForFreepage()
         { homePage.openForfreePage(); }
 
-
-        //[Test]
-        //public void obmen()
-        //{
-        //    IWebDriver browser = new ChromeDriver();
-        //    browser.Navigate().GoToUrl("https://www.olx.ua");
-        //    IWebElement categoria = browser.FindElement(By.CssSelector("#searchmain-container > div > div > div:nth-child(16) > div.li.fleft > div > a > span:nth-child(1)"));
-        //    categoria.Click();
-        //    browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-        //    browser.Close();
-        //}
+        [Test]
+        public void ExchangePage()
+        { homePage.openExchangePage(); }
 
         [TearDown]
         public void returnToMainPage()
